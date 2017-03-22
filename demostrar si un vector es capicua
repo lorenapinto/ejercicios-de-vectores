@@ -1,0 +1,72 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar (double vec[], int n);
+void revertir (double a[], int n, double vec[]);
+void mostrar (double a[], int n);
+void capicua (double a[], double vec[], int n);
+
+void main ()
+{
+	double vec[MAX],a[MAX];
+	int n;
+	cout<<"Ingrese el tamaño del vector: ";
+	cin>>n;
+	cargar (vec,n);
+	cout<<"El vector invertido es: "<<endl;
+	revertir (a,n,vec);
+	mostrar (a,n);
+	capicua (a,vec,n);
+	getch();
+}
+
+void cargar (double vec[],int n)
+{
+	int i;
+	for (i=0;i<n;i++)
+	{
+		cout<<"vec["<<i<<"]= ";
+		cin>>vec[i];
+	}
+}
+
+
+void revertir (double a[], int n, double vec[])
+{
+	int i;
+	for (i=0;i<n;i++)
+	{
+		a[i]=vec[((n-1)-i)];
+	}
+}
+
+
+void mostrar (double a[], int n)
+{
+    int i;
+	for (i=0;i<n;i++)
+	cout<<"a["<<i<<"]= "<<a[i]<<endl;
+}
+
+
+void capicua (double a[], double vec[], int n)
+{
+	int i,band=0;
+	for (i=0;i<n;i++)
+	{
+		if (a[i]==vec[i])
+			band=band+0;
+		else
+			band=band+1;
+	}
+
+	if (band==0)
+		cout<<" Es capicua ";
+	else
+		cout<<"No es capicua ";
+
+}
