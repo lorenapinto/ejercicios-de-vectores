@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+void cargarvector (double vec[], int n);
+void revertirvector (double vec[], double a[], int n);
+
+
+void main()
+{
+	int n;
+	double vec[MAX], a[MAX];
+	cout<<" Ingrese el tamanho de su vector: ";
+	cin>>n;
+	cargarvector (vec,n);
+	revertirvector(vec,a,n);
+	getch();
+}
+
+
+void cargarvector (double vec[], int n)
+{
+	int i;
+	for (i=0;i<n;i++)
+	{
+		cout<<"vec["<<i<<"]= ";
+		cin>>vec[i];
+	}
+}
+
+void revertirvector (double vec[], double a[], int n)
+{
+	int i;
+	for (i=0;i<n;i++)
+	{
+		a[i]= vec[n-1-i];
+		cout<<"a["<<i<<"]= "<<a[i]<<endl;
+	}
+}
